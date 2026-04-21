@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"time"
 
 	"ride-sharing/shared/contracts"
 )
 
 func handleTripPreview(w http.ResponseWriter, r *http.Request) {
+	time.Sleep(time.Second * 9)
 	var reqBody previewTripRequest
 	defer r.Body.Close()
 

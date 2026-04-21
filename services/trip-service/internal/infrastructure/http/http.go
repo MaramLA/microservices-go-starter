@@ -20,6 +20,7 @@ type previewTripRequest struct {
 }
 
 func (s *HttpHandler) HandleTripPreview(w http.ResponseWriter, r *http.Request) {
+	
 	var reqBody previewTripRequest
 	if err := json.NewDecoder(r.Body).Decode(&reqBody); err != nil {
 		http.Error(w, "failed to parse json data", http.StatusBadRequest)
