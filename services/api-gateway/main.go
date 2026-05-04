@@ -17,7 +17,7 @@ var httpAddr = env.GetString("HTTP_ADDR", ":8081")
 func main() {
 	log.Println("Starting API Gateway")
 	mux := http.NewServeMux()
-	mux.HandleFunc("POST /trip/preview", handleTripPreview)
+	mux.HandleFunc("POST /trip/preview", enableCors(handleTripPreview))
 	mux.HandleFunc("/ws/drivers", handleDriversWebSocket)
 	mux.HandleFunc("/ws/riders", handleRidersWebSocket)
 
